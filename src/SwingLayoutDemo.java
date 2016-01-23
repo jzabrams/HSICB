@@ -28,7 +28,7 @@ public class SwingLayoutDemo {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLayout(new GridBagLayout());
                 
-                 frame.setSize(600,700);
+                 frame.setSize(750,700);
                 
                 
                 gbc.gridx=0;
@@ -76,7 +76,12 @@ public class SwingLayoutDemo {
 
     protected class Pane1 extends JPanel {
 
-        public Pane1() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane1() {
             setLayout(new GridBagLayout());
             
             GridBagConstraints gbc = new GridBagConstraints();
@@ -137,7 +142,12 @@ public class SwingLayoutDemo {
     
     protected class Pane2 extends JPanel {
 
-        public Pane2() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane2() {
             setLayout(new GridBagLayout());
 
             JPanel buttonPane = new JPanel(new GridBagLayout());
@@ -176,7 +186,12 @@ public class SwingLayoutDemo {
     
     protected class Pane3 extends JPanel {
 
-        public Pane3() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane3() {
             setLayout(new GridBagLayout());
 
             JPanel buttonPane = new JPanel(new GridBagLayout());
@@ -215,7 +230,12 @@ public class SwingLayoutDemo {
     
     protected class Pane4 extends JPanel {
 
-        public Pane4() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane4() {
             setLayout(new GridBagLayout());
 
             JPanel buttonPane = new JPanel(new GridBagLayout());
@@ -254,7 +274,12 @@ public class SwingLayoutDemo {
     
     protected class Pane5 extends JPanel {
 
-        public Pane5() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane5() {
             setLayout(new GridBagLayout());
 
             JPanel buttonPane = new JPanel(new GridBagLayout());
@@ -293,7 +318,12 @@ public class SwingLayoutDemo {
     
     protected class Pane6 extends JPanel {
 
-        public Pane6() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane6() {
             setLayout(new GridBagLayout());
 
             JPanel buttonPane = new JPanel(new GridBagLayout());
@@ -344,7 +374,12 @@ public class SwingLayoutDemo {
     
     protected class Pane7 extends JPanel {
 
-        public Pane7() {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		public Pane7() {
             setLayout(new GridBagLayout());
 
             JPanel buttonPane = new JPanel(new GridBagLayout());
