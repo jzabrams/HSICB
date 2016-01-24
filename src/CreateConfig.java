@@ -16,95 +16,12 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.SftpATTRS;
 import com.jcraft.jsch.SftpException;
 
-public class HSConfigBuilder {
+public class CreateConfig {
 
 	
  
-	//static String userVar[];
+	
 	static secureFileTransfer toServer = null;
-	
-	public static void main(String[] args) {
-		   
-		
-		
-		JFileChooser fchooser = new JFileChooser();
-		JFrame frame = new JFrame("JOptionPane showMessageDialog example");
-		
-		setUpFiletransfer();
-		
-	    FileNameExtensionFilter filter = new FileNameExtensionFilter("RSC FILES", "rsc");
-	    fchooser.setFileFilter(filter);
-	    
-	    
-			JOptionPane.showMessageDialog(frame, 
-					"HSI CPE Config Builder version a0.0.8\n"
-					+ "\n "
-					+ "This program will generate a config file \n"
-					+ "based on input received through the following\n"
-					+ " series of windows. Please know that this is an\n"
-					+ "EARLY ALPHA version of this program, and \n"
-					+ "there is currently limited error checking on \n"
-					+ "user input. After you complete your data input\n"
-					+ "a confirmation window will display your entries.", "HSI CPE Config Builder version a0.0.8", JOptionPane.INFORMATION_MESSAGE);
-			
-			JOptionPane.showMessageDialog(frame, 
-					"How to use:\n"
-					+ "Select the base .rsc file for your config.\n"
-					+ "Fill in the fields on each window.\n"
-					+ "Confirm input on confirmation page.\n"
-					+ "Give the destination file name and directory.\n"
-					+ "New config file will be generated.\n"
-					+ "", "HSI CPE Config Builder version a0.0.8", JOptionPane.INFORMATION_MESSAGE);
-		
-		    
-			fchooser.setDialogTitle("Choose a base config file:");
-		    int result = fchooser.showOpenDialog(fchooser);
-		    if(result==1)System.exit(0);
-		    File myFile = fchooser.getSelectedFile();
-		    
-		    
-		    String preInput[]=getUserInput();
-		    
-		  
-		    fchooser.setDialogTitle("Choose output config location:");
-		    fchooser.setSelectedFile(new File("NEWCONFIGNAME.rsc"));
-		    
-		    int result2 = fchooser.showSaveDialog(fchooser);
-		    if(result2==1)System.exit(0);
-		    File outputFile = fchooser.getSelectedFile();
-		    
-		
-		    try {
-				readwriteFile(myFile, outputFile, preInput);
-			} catch (IOException | JSchException e) {
-				
-				e.printStackTrace();
-			}	
-		    
-		    
-		    //Ask user if they want to upload file to server.
-		    if (JOptionPane.showConfirmDialog(null, "Would you like to upload the generated config file(s) to Account"+preInput[4]+"'s PowerCode profile??", "Upload to PowerCode?",
-		            JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-		    	
-		    	uploadConf(preInput, outputFile);
-		    	
-		    	JOptionPane.showMessageDialog(null,"Config generation complete. Press OK to exit.", "HSI CPE Config Builder version a0.0.8", JOptionPane.INFORMATION_MESSAGE);
-				System.exit(0);
-		    } 
-		    else {
-		       
-		    	JOptionPane.showMessageDialog(frame, "Config generation complete. Press OK to exit.", "HSI CPE Config Builder version a0.0.8", JOptionPane.INFORMATION_MESSAGE);
-				System.exit(0);
-		    }
-		    
-				
-		    
-		    
-			
-	}
-	
-
-	
 	
 	
 	public static  String[] getUserInput() 
